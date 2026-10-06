@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Motifs from './Motifs.astro';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Journey from './Journey.astro';
+import MapSection from './MapSection.astro';
+import People from './People.astro';
+import Culture from './Culture.astro';
+import Closing from './Closing.astro';
+import Footer from './Footer.astro';
+import Band from './Band.astro';
+import type { Lang } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Base lang={lang}>
+  <Motifs />
+  <Nav lang={lang} />
+  <main id="main">
+    <Hero lang={lang} />
+    <Journey lang={lang} />
+    <MapSection lang={lang} />
+    <Band />
+    <People lang={lang} />
+    <Culture lang={lang} />
+    <Closing lang={lang} />
+  </main>
+  <Footer lang={lang} />
+  <div class="cursor" aria-hidden="true"><span></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <script>
+    import '../scripts/main';
+  </script>
+</Base>

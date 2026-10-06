@@ -1,0 +1,58 @@
+---
+import Picture from './Picture.astro';
+import { govByIso } from '../lib/data';
+import { LOCALE, type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const nf = new Intl.NumberFormat(LOCALE[lang]);
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<section class="journey" id="journey" aria-labelledby="journey-title" data-journey>
+  <div class="wrap journey__intro">
+    <div class="section-head">
+      <p class="kicker" data-reveal>{t.journey.kicker}</p>
+      <h2 class="display" id="journey-title" data-reveal>{t.journey.title}</h2>
+      <p class="lead" data-reveal>{t.journey.intro}</p>
+    </div>
+  </div>
+  <div class="journey__viewport" data-journey-viewport>
+    <ol class="journey__track" data-journey-track role="list">
+      {t.journey.chapters.map((c, i) => {
+        const gov = govByIso.get(c.iso);
+        return (
+          <li class="chapter wrap" id={`chapter-${c.id}`} data-chapter aria-labelledby={`ch-${c.id}`}>
+            <div class="chapter__media" data-cursor data-cursor-label="◉">
+              <Picture slot={c.image} lang={lang} sizes="(min-width: 960px) 58vw, 100vw" imgClass="parallax" />
+            </div>
+            <div class="chapter__body">
+              <p class="chapter__num" aria-hidden="true" data-chapter-reveal>{pad(i + 1)}</p>
+              <p class="chapter__place" data-chapter-reveal>{c.place}</p>
+              <div data-chapter-reveal>
+                <h3 id={`ch-${c.id}`}>{c.name}</h3>
+                <p class="chapter__ar" lang={lang === 'ar' ? 'en' : 'ar'}>{c.nameAr}</p>
+              </div>
+              <p class="chapter__text" data-chapter-reveal>{c.text}</p>
+              <dl class="facts" data-chapter-reveal>
+                {c.facts.map((f) => (
+                  <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
+                ))}
+                {gov && (
+                  <div class="pop">
+                    <dt>{t.journey.population} · {lang === 'ar' ? gov.nameAr : gov.name}</dt>
+                    <dd>{nf.format(gov.population)}</dd>
+                  </div>
+                )}
+              </dl>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+    <div class="journey__hud" aria-hidden="true">
+      <span data-hud-index>01</span>
+      <span class="bar"><i data-hud-bar></i></span>
+      <span>{pad(t.journey.chapters.length)}</span>
+    </div>
+  </div>
+</section>

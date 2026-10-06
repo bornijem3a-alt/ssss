@@ -1,0 +1,722 @@
+{
+  "$comment": "Every figure carries a source id and a reference year. Figures marked status 'todo' could not be verified from an official source at build time and are intentionally null. Never replace a null with an estimate without adding its source.",
+  "lastReviewed": "2026-10-06",
+  "sources": [
+    {
+      "id": "ins-rgph-2024",
+      "name": "Institut National de la Statistique (INS), Recensement Général de la Population et de l'Habitat 2024 — Bilan démographique",
+      "url": "https://www.ins.tn/sites/default/files-ftp3/files/2025-05/Bilan%20D%C3%A9mographique_0.pdf"
+    },
+    {
+      "id": "ins-rgph-2024-portal",
+      "name": "INS — Population and Housing Census 2024 (portal)",
+      "url": "https://www.ins.tn/en/enquetes/population-and-housing-census-2024"
+    },
+    {
+      "id": "ins-rgph-2024-thematic",
+      "name": "INS, RGPH 2024 thematic analyses, as reported by La Presse de Tunisie (30 Sep 2025)",
+      "url": "https://lapresse.tn/2025/09/30/recensement-general-de-la-population-2024-un-pays-jeune-urbanise-et-connecte-en-mutation/"
+    },
+    {
+      "id": "ins-censuses-historic",
+      "name": "INS, historical census totals (Bilan démographique, RGPH 2024 / RGPH 2014)",
+      "url": "https://www.ins.tn/sites/default/files-ftp3/files/publication/pdf/Bilan_D%C3%A9mographique.pdf"
+    },
+    {
+      "id": "worldbank-sp-pop-totl",
+      "name": "World Bank, World Development Indicators — Population, total (SP.POP.TOTL), via the datasets/population open mirror",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=TN",
+      "license": "CC BY 4.0 (World Bank); mirror ODC-PDDL-1.0"
+    }
+  ],
+  "total": {
+    "value": 11972169,
+    "year": 2024,
+    "date": "2024-11-06",
+    "source": "ins-rgph-2024",
+    "status": "verified",
+    "note": "Census reference date 6 November 2024. Equals the sum of the 24 governorate figures below."
+  },
+  "growth": {
+    "decadeIncrease": {
+      "value": 989415,
+      "period": "2014–2024",
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    "annualRatePercent": {
+      "value": 0.87,
+      "period": "2014–2024",
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    }
+  },
+  "sex": {
+    "womenPercent": {
+      "value": 50.7,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    "menPercent": {
+      "value": 49.3,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    }
+  },
+  "urbanization": {
+    "urbanPercent": {
+      "value": 72,
+      "year": 2024,
+      "source": "ins-rgph-2024-thematic",
+      "status": "verified"
+    },
+    "ruralPercent": {
+      "value": 28,
+      "year": 2024,
+      "source": "ins-rgph-2024-thematic",
+      "status": "verified"
+    },
+    "note": "INS defines 'urban' as the communal environment (milieu communal)."
+  },
+  "ageStructure": {
+    "broadBands": [
+      {
+        "band": "0-14",
+        "percent": 22.8,
+        "year": 2024,
+        "source": "ins-rgph-2024-thematic",
+        "status": "verified"
+      },
+      {
+        "band": "15-59",
+        "percent": 60.3,
+        "year": 2024,
+        "source": "ins-rgph-2024",
+        "status": "derived",
+        "note": "100 − 22.8 − 16.9"
+      },
+      {
+        "band": "60+",
+        "percent": 16.9,
+        "year": 2024,
+        "source": "ins-rgph-2024",
+        "status": "verified"
+      }
+    ],
+    "seniorsShare2014": {
+      "percent": 11.7,
+      "year": 2014,
+      "source": "ins-rgph-2024-thematic",
+      "status": "verified"
+    },
+    "youth15to34": {
+      "percent": 26.7,
+      "year": 2024,
+      "source": "ins-rgph-2024-thematic",
+      "status": "verified"
+    },
+    "fiveYearBySex": {
+      "status": "todo",
+      "TODO": "Five-year age groups by sex (RGPH 2024) not yet transcribed from an official INS table. Leave null until verified; the pyramid then falls back to the verified broad bands.",
+      "source": null,
+      "year": 2024,
+      "groups": null
+    }
+  },
+  "censuses": [
+    {
+      "year": 1956,
+      "value": null,
+      "status": "todo",
+      "source": "ins-censuses-historic",
+      "TODO": "Conflicting published figures (≈3.44 M vs ≈3.78 M depending on whether non-Tunisian residents are included). Verify against the INS table before filling."
+    },
+    {
+      "year": 1966,
+      "value": 4533000,
+      "precision": "thousands",
+      "source": "ins-censuses-historic",
+      "status": "verified"
+    },
+    {
+      "year": 1975,
+      "value": 5588000,
+      "precision": "thousands",
+      "source": "ins-censuses-historic",
+      "status": "verified"
+    },
+    {
+      "year": 1984,
+      "value": 6966000,
+      "precision": "thousands",
+      "source": "ins-censuses-historic",
+      "status": "verified"
+    },
+    {
+      "year": 1994,
+      "value": 8785000,
+      "precision": "thousands",
+      "source": "ins-censuses-historic",
+      "status": "verified"
+    },
+    {
+      "year": 2004,
+      "value": 9910872,
+      "source": "ins-censuses-historic",
+      "status": "verified"
+    },
+    {
+      "year": 2014,
+      "value": 10982754,
+      "source": "ins-censuses-historic",
+      "status": "verified",
+      "note": "Consistent with the 989,415 increase reported for 2014–2024."
+    },
+    {
+      "year": 2024,
+      "value": 11972169,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    }
+  ],
+  "annualEstimates": {
+    "source": "worldbank-sp-pop-totl",
+    "indicator": "SP.POP.TOTL",
+    "status": "verified",
+    "note": "Mid-year modelled estimates (UN World Population Prospects basis). They run higher than the 2024 census count; both are shown, each labelled with its source.",
+    "series": [
+      [
+        1960,
+        4267288
+      ],
+      [
+        1961,
+        4316278
+      ],
+      [
+        1962,
+        4369136
+      ],
+      [
+        1963,
+        4427131
+      ],
+      [
+        1964,
+        4489869
+      ],
+      [
+        1965,
+        4561385
+      ],
+      [
+        1966,
+        4652287
+      ],
+      [
+        1967,
+        4760970
+      ],
+      [
+        1968,
+        4879899
+      ],
+      [
+        1969,
+        5004697
+      ],
+      [
+        1970,
+        5131396
+      ],
+      [
+        1971,
+        5261658
+      ],
+      [
+        1972,
+        5396557
+      ],
+      [
+        1973,
+        5537242
+      ],
+      [
+        1974,
+        5684674
+      ],
+      [
+        1975,
+        5839262
+      ],
+      [
+        1976,
+        5996994
+      ],
+      [
+        1977,
+        6155931
+      ],
+      [
+        1978,
+        6309390
+      ],
+      [
+        1979,
+        6456419
+      ],
+      [
+        1980,
+        6606195
+      ],
+      [
+        1981,
+        6758284
+      ],
+      [
+        1982,
+        6908642
+      ],
+      [
+        1983,
+        7053800
+      ],
+      [
+        1984,
+        7220044
+      ],
+      [
+        1985,
+        7409903
+      ],
+      [
+        1986,
+        7600301
+      ],
+      [
+        1987,
+        7789987
+      ],
+      [
+        1988,
+        7974440
+      ],
+      [
+        1989,
+        8151660
+      ],
+      [
+        1990,
+        8324509
+      ],
+      [
+        1991,
+        8501827
+      ],
+      [
+        1992,
+        8682512
+      ],
+      [
+        1993,
+        8857910
+      ],
+      [
+        1994,
+        9018448
+      ],
+      [
+        1995,
+        9161258
+      ],
+      [
+        1996,
+        9294432
+      ],
+      [
+        1997,
+        9421270
+      ],
+      [
+        1998,
+        9541667
+      ],
+      [
+        1999,
+        9655963
+      ],
+      [
+        2000,
+        9764935
+      ],
+      [
+        2001,
+        9869677
+      ],
+      [
+        2002,
+        9971515
+      ],
+      [
+        2003,
+        10071632
+      ],
+      [
+        2004,
+        10166163
+      ],
+      [
+        2005,
+        10255472
+      ],
+      [
+        2006,
+        10346410
+      ],
+      [
+        2007,
+        10441702
+      ],
+      [
+        2008,
+        10542635
+      ],
+      [
+        2009,
+        10650681
+      ],
+      [
+        2010,
+        10765980
+      ],
+      [
+        2011,
+        10886035
+      ],
+      [
+        2012,
+        11009647
+      ],
+      [
+        2013,
+        11141361
+      ],
+      [
+        2014,
+        11274288
+      ],
+      [
+        2015,
+        11402264
+      ],
+      [
+        2016,
+        11528674
+      ],
+      [
+        2017,
+        11650498
+      ],
+      [
+        2018,
+        11765514
+      ],
+      [
+        2019,
+        11875081
+      ],
+      [
+        2020,
+        11974057
+      ],
+      [
+        2021,
+        12048622
+      ],
+      [
+        2022,
+        12119334
+      ],
+      [
+        2023,
+        12200431
+      ],
+      [
+        2024,
+        12277109
+      ],
+      [
+        2025,
+        12348573
+      ]
+    ]
+  },
+  "governorates": [
+    {
+      "iso": "TN-11",
+      "name": "Tunis",
+      "nameAr": "تونس",
+      "capital": "Tunis",
+      "capitalAr": "تونس",
+      "population": 1075306,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-12",
+      "name": "Ariana",
+      "nameAr": "أريانة",
+      "capital": "Ariana",
+      "capitalAr": "أريانة",
+      "population": 668552,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-13",
+      "name": "Ben Arous",
+      "nameAr": "بن عروس",
+      "capital": "Ben Arous",
+      "capitalAr": "بن عروس",
+      "population": 722828,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-14",
+      "name": "Manouba",
+      "nameAr": "منوبة",
+      "capital": "Manouba",
+      "capitalAr": "منوبة",
+      "population": 418354,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-21",
+      "name": "Nabeul",
+      "nameAr": "نابل",
+      "capital": "Nabeul",
+      "capitalAr": "نابل",
+      "population": 863172,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-22",
+      "name": "Zaghouan",
+      "nameAr": "زغوان",
+      "capital": "Zaghouan",
+      "capitalAr": "زغوان",
+      "population": 201065,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-23",
+      "name": "Bizerte",
+      "nameAr": "بنزرت",
+      "capital": "Bizerte",
+      "capitalAr": "بنزرت",
+      "population": 607388,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-31",
+      "name": "Béja",
+      "nameAr": "باجة",
+      "capital": "Béja",
+      "capitalAr": "باجة",
+      "population": 311417,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-32",
+      "name": "Jendouba",
+      "nameAr": "جندوبة",
+      "capital": "Jendouba",
+      "capitalAr": "جندوبة",
+      "population": 404352,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-33",
+      "name": "Le Kef",
+      "nameAr": "الكاف",
+      "capital": "Le Kef",
+      "capitalAr": "الكاف",
+      "population": 237686,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-34",
+      "name": "Siliana",
+      "nameAr": "سليانة",
+      "capital": "Siliana",
+      "capitalAr": "سليانة",
+      "population": 216242,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-41",
+      "name": "Kairouan",
+      "nameAr": "القيروان",
+      "capital": "Kairouan",
+      "capitalAr": "القيروان",
+      "population": 600803,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-42",
+      "name": "Kasserine",
+      "nameAr": "القصرين",
+      "capital": "Kasserine",
+      "capitalAr": "القصرين",
+      "population": 492741,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-43",
+      "name": "Sidi Bouzid",
+      "nameAr": "سيدي بوزيد",
+      "capital": "Sidi Bouzid",
+      "capitalAr": "سيدي بوزيد",
+      "population": 489991,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-51",
+      "name": "Sousse",
+      "nameAr": "سوسة",
+      "capital": "Sousse",
+      "capitalAr": "سوسة",
+      "population": 762281,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-52",
+      "name": "Monastir",
+      "nameAr": "المنستير",
+      "capital": "Monastir",
+      "capitalAr": "المنستير",
+      "population": 599769,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-53",
+      "name": "Mahdia",
+      "nameAr": "المهدية",
+      "capital": "Mahdia",
+      "capitalAr": "المهدية",
+      "population": 449985,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-61",
+      "name": "Sfax",
+      "nameAr": "صفاقس",
+      "capital": "Sfax",
+      "capitalAr": "صفاقس",
+      "population": 1047468,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-71",
+      "name": "Gafsa",
+      "nameAr": "قفصة",
+      "capital": "Gafsa",
+      "capitalAr": "قفصة",
+      "population": 388776,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-72",
+      "name": "Tozeur",
+      "nameAr": "توزر",
+      "capital": "Tozeur",
+      "capitalAr": "توزر",
+      "population": 120036,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-73",
+      "name": "Kébili",
+      "nameAr": "قبلي",
+      "capital": "Kébili",
+      "capitalAr": "قبلي",
+      "population": 183201,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-81",
+      "name": "Gabès",
+      "nameAr": "قابس",
+      "capital": "Gabès",
+      "capitalAr": "قابس",
+      "population": 410847,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-82",
+      "name": "Médenine",
+      "nameAr": "مدنين",
+      "capital": "Médenine",
+      "capitalAr": "مدنين",
+      "population": 537255,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    },
+    {
+      "iso": "TN-83",
+      "name": "Tataouine",
+      "nameAr": "تطاوين",
+      "capital": "Tataouine",
+      "capitalAr": "تطاوين",
+      "population": 162654,
+      "year": 2024,
+      "source": "ins-rgph-2024",
+      "status": "verified"
+    }
+  ]
+}

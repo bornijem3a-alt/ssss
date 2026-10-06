@@ -1,0 +1,84 @@
+---
+import Picture from './Picture.astro';
+import { governorates, population } from '../lib/data';
+import { LOCALE, type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const nf = new Intl.NumberFormat(LOCALE[lang]);
+
+// Governorates that have a matching photograph in data/images.json.
+const photos: Record<string, string> = {
+  'TN-11': 'sidibousaid', 'TN-53': 'eljem', 'TN-41': 'kairouan', 'TN-82': 'djerba',
+  'TN-32': 'tabarka', 'TN-81': 'matmata', 'TN-72': 'chott', 'TN-73': 'sahara',
+  'TN-21': 'ceramics', 'TN-51': 'artisan',
+};
+const sorted = [...governorates].sort((a, b) => b.population - a.population);
+const rank = new Map(sorted.map((g, i) => [g.iso, i + 1]));
+const total = population.total.value;
+const label = (g: (typeof governorates)[number]) => (lang === 'ar' ? g.nameAr : g.name);
+const start = governorates[0];
+const payload = governorates.map((g) => ({
+  iso: g.iso,
+  name: label(g),
+  alt: lang === 'ar' ? g.name : g.nameAr,
+  capital: lang === 'ar' ? g.capitalAr : g.capital,
+  population: g.population,
+  rank: rank.get(g.iso),
+  share: g.population / total,
+  photo: photos[g.iso] ?? null,
+}));
+---
+<section class="mapsec light" id="map" aria-labelledby="map-title">
+  <svg class="mapsec__pattern" width="100%" height="100%" aria-hidden="true"><rect width="100%" height="100%" fill="url(#zellige)" /></svg>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>{t.map.kicker}</p>
+      <h2 class="display" id="map-title" data-reveal>{t.map.title}</h2>
+      <p class="lead" data-reveal>{t.map.intro}</p>
+    </div>
+    <div class="mapgrid">
+      <div>
+        <div class="map" data-map role="application" aria-label={t.map.title}>
+          <noscript><p class="map__fallback">{t.map.listLabel}: see list below.</p></noscript>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <span>{t.map.legendLow}</span><i></i><span>{t.map.legendHigh}</span>
+        </div>
+      </div>
+
+      <article class="govcard" aria-live="polite" data-govcard>
+        <div data-gov-photo>
+          {governorates.filter((g) => photos[g.iso]).map((g) => (
+            <div hidden={g.iso !== start.iso} data-photo-for={g.iso}>
+              <Picture slot={photos[g.iso]} lang={lang} sizes="(min-width: 960px) 30vw, 100vw" />
+            </div>
+          ))}
+          <div class="govcard__photo-empty" hidden={!!photos[start.iso]} data-photo-empty>
+            <svg aria-hidden="true"><rect width="100%" height="100%" fill="url(#zellige)" /></svg>
+            <span data-photo-empty-name>{label(start)}</span>
+          </div>
+        </div>
+        <div>
+          <h3 data-gov-name>{label(start)}</h3>
+          <p class="govcard__ar" data-gov-alt lang={lang === 'ar' ? 'fr' : 'ar'}>{lang === 'ar' ? start.name : start.nameAr}</p>
+        </div>
+        <dl>
+          <div><dt>{t.map.population}</dt><dd data-gov-pop>{nf.format(start.population)}</dd></div>
+          <div><dt>{t.map.capital}</dt><dd data-gov-capital>{lang === 'ar' ? start.capitalAr : start.capital}</dd></div>
+          <div><dt>{t.map.share}</dt><dd data-gov-share>{new Intl.NumberFormat(LOCALE[lang], { style: 'percent', maximumFractionDigits: 1 }).format(start.population / total)}</dd></div>
+          <div><dt>{t.map.rank}</dt><dd><span data-gov-rank>{rank.get(start.iso)}</span> <small>{t.map.of}</small></dd></div>
+        </dl>
+        <p class="source">{t.map.source}</p>
+      </article>
+    </div>
+
+    <h3 class="sr-only" id="govlist-title">{t.map.listLabel}</h3>
+    <ul class="govlist" aria-labelledby="govlist-title" data-govlist style="margin-top:2rem">
+      {governorates.map((g) => (
+        <li><button type="button" data-iso={g.iso} aria-pressed={g.iso === start.iso ? 'true' : 'false'}>{label(g)}</button></li>
+      ))}
+    </ul>
+  </div>
+  <script type="application/json" data-map-data set:html={JSON.stringify({ locale: LOCALE[lang], govs: payload })} />
+</section>

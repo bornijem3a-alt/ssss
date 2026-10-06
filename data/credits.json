@@ -1,0 +1,261 @@
+{
+  "$comment": "Photo credits. author/license are filled from the Wikimedia Commons API by `npm run images` (and fetched live in the footer when still pending). Never hand-type an author or license you have not checked on the file page.",
+  "images": [
+    {
+      "slot": "hero-gulf",
+      "file": "Golfe de Tunis et port de Sidi Bou Saïd.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Golfe_de_Tunis_et_port_de_Sidi_Bou_Saïd.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "hero-port",
+      "file": "View of Sidi Bou Said port. Northern Tunisia, Mediterranean Sea, Northern Africa.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Sidi_Bou_Said_port._Northern_Tunisia,_Mediterranean_Sea,_Northern_Africa.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "hero-tabarka",
+      "file": "Le Fort Génois de Tabarka.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Le_Fort_Génois_de_Tabarka.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "sidibousaid",
+      "file": "Doors of Sidi Bou Said. Northern Tunisia, Mediterranean Sea, Northern Africa-3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Doors_of_Sidi_Bou_Said._Northern_Tunisia,_Mediterranean_Sea,_Northern_Africa-3.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "medina",
+      "file": "Souk El Attarine, la médina de Tunis.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Souk_El_Attarine,_la_médina_de_Tunis.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "carthage",
+      "file": "Tunisia-2963 - Antonine Baths (7846402382).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tunisia-2963_-_Antonine_Baths_(7846402382).jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "eljem",
+      "file": "Anfiteatro, El Jem, Túnez, 2016-09-04, DD 55-66 HDR PAN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Anfiteatro,_El_Jem,_Túnez,_2016-09-04,_DD_55-66_HDR_PAN.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "kairouan",
+      "file": "Courtyard of the Great Mosque Okba of Kairouan.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Courtyard_of_the_Great_Mosque_Okba_of_Kairouan.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "djerba",
+      "file": "Bordj-Kebir-02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bordj-Kebir-02.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "tabarka",
+      "file": "Tbarka, Jendouba, Tunisia.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tbarka,_Jendouba,_Tunisia.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "matmata",
+      "file": "Maison troglodytique, Matmata.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Maison_troglodytique,_Matmata.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "chott",
+      "file": "Chott-El-Jerid-Sunrise.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Chott-El-Jerid-Sunrise.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "sahara",
+      "file": "Tunisia 10-12 - 086 - Douz and the Festival of the Sahara (6609303695).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tunisia_10-12_-_086_-_Douz_and_the_Festival_of_the_Sahara_(6609303695).jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "ceramics",
+      "file": "Jarre Nabeul.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Jarre_Nabeul.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "chechia",
+      "file": "La chechia tunisienne.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:La_chechia_tunisienne.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "carpets",
+      "file": null,
+      "page": null,
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "couscous",
+      "file": "Royal Tunisian couscous.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Royal_Tunisian_couscous.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "brik",
+      "file": "Tunisian Brick.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Tunisian_Brick.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "makroudh",
+      "file": "Makrouds.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Makrouds.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "malouf",
+      "file": "Dar Errachida 1.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Dar_Errachida_1.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "carthage-festival",
+      "file": "Festival de Carthage au théatre romain.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Festival_de_Carthage_au_théatre_romain.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "douz-festival",
+      "file": "Tunisia 10-12 - 077 - Douz and the Festival of the Sahara (6609297377).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tunisia_10-12_-_077_-_Douz_and_the_Festival_of_the_Sahara_(6609297377).jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "avenue",
+      "file": "Avenue Habib Bourguiba by night.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Avenue_Habib_Bourguiba_by_night.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "cafe",
+      "file": "CAFE DES DELICES SIDI BOU SAID TUNIS.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:CAFE_DES_DELICES_SIDI_BOU_SAID_TUNIS.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "skyline",
+      "file": "Skyline of Tunis.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Skyline_of_Tunis.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "insat",
+      "file": "Tunis INSAT.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Tunis_INSAT.JPG",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "artisan",
+      "file": "A Tunisian craftsman in his beautiful shop in Hergla creating light fixtures,Tunisia.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_Tunisian_craftsman_in_his_beautiful_shop_in_Hergla_creating_light_fixtures,Tunisia.jpg",
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    },
+    {
+      "slot": "youth",
+      "file": null,
+      "page": null,
+      "author": "TODO: pending (npm run images)",
+      "license": "TODO: pending (npm run images)",
+      "licenseUrl": null
+    }
+  ],
+  "data": [
+    {
+      "what": "Governorate boundaries",
+      "source": "geoBoundaries gbOpen TUN ADM1 (OpenStreetMap contributors, Wambacher)",
+      "license": "ODbL 1.0",
+      "url": "https://www.geoboundaries.org/"
+    },
+    {
+      "what": "Population figures",
+      "source": "Institut National de la Statistique (INS) and World Bank — see data/population.json for per-figure sources",
+      "license": "Public statistics / CC BY 4.0 (World Bank)",
+      "url": "https://www.ins.tn/"
+    },
+    {
+      "what": "Typefaces",
+      "source": "Cormorant Garamond, Inter, Amiri via Fontsource",
+      "license": "SIL Open Font License 1.1",
+      "url": "https://fontsource.org/"
+    },
+    {
+      "what": "Ambient sound",
+      "source": "Synthesised in the browser with the Web Audio API",
+      "license": "Original work",
+      "url": null
+    },
+    {
+      "what": "Decorative motifs",
+      "source": "Original SVG drawings inspired by Tunisian doors, zellige and Amazigh patterns",
+      "license": "Original work",
+      "url": null
+    }
+  ]
+}

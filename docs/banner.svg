@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Tunisia / تونس, an interactive documentary">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#11356b"/>
+      <stop offset="0.55" stop-color="#1b4f9c"/>
+      <stop offset="0.8" stop-color="#c8643f"/>
+      <stop offset="1" stop-color="#2a1408"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd29a"/>
+      <stop offset="0.5" stop-color="#f39a5b"/>
+      <stop offset="1" stop-color="#f39a5b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="z" width="40" height="40" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#f6f3ec" stroke-opacity=".08">
+        <rect x="10" y="10" width="20" height="20"/>
+        <rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1200" height="420" fill="url(#sky)"/>
+  <rect width="1200" height="420" fill="url(#z)"/>
+  <circle cx="860" cy="330" r="120" fill="url(#sun)"/>
+  <path d="M0 360 C200 320 360 350 520 335 S860 300 1200 345 V420 H0Z" fill="#2a1408"/>
+  <path d="M0 385 C260 360 520 395 760 372 S1040 360 1200 380 V420 H0Z" fill="#120a06"/>
+  <rect width="1200" height="34" fill="#05080d"/>
+  <rect y="386" width="1200" height="34" fill="#05080d"/>
+  <text x="72" y="210" fill="#f6f3ec" font-family="Cormorant Garamond, Georgia, serif" font-size="128" font-weight="300">Tunisia</text>
+  <text x="520" y="210" fill="#f6f3ec" fill-opacity=".45" font-family="Georgia, serif" font-size="70">/</text>
+  <text x="590" y="214" fill="#e8d5b0" font-family="Amiri, 'Noto Naskh Arabic', serif" font-size="104">تونس</text>
+  <text x="76" y="262" fill="#f6f3ec" fill-opacity=".85" font-family="Inter, system-ui, sans-serif" font-size="17" letter-spacing="5">AN INTERACTIVE DOCUMENTARY</text>
+</svg>

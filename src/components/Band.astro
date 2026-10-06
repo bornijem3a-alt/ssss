@@ -1,0 +1,8 @@
+---
+// A woven Amazigh-style border used between chapters.
+interface Props { class?: string }
+const { class: cls = '' } = Astro.props;
+---
+<div class:list={['band', cls]} aria-hidden="true">
+  <svg width="100%" height="24" preserveAspectRatio="none"><rect width="100%" height="24" fill="url(#amazigh)" /></svg>
+</div>

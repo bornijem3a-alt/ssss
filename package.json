@@ -1,0 +1,35 @@
+{
+  "name": "tunisia-cinematic",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tunisia / تونس: a cinematic, scroll-driven documentary about the land and its people.",
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/fetch-images.mjs --soft",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "images": "node scripts/fetch-images.mjs",
+    "geo": "node scripts/build-geo.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/amiri": "^5.3.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "astro": "^7.3.6",
+    "chart.js": "^4.5.1",
+    "gsap": "^3.15.0",
+    "leaflet": "^1.9.4",
+    "lenis": "^1.3.26"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/leaflet": "^1.9.22",
+    "mapshaper": "^0.7.78",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.3"
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "$comment": "Image slots. 'file' is a Wikimedia Commons file title. Run `npm run images` to download, convert to AVIF/WebP, build blur placeholders and refresh credits from the Commons API.",
+  "slots": {
+    "hero-gulf": {
+      "file": "Golfe de Tunis et port de Sidi Bou Saïd.jpg",
+      "tone": "#5f86a8",
+      "alt": {
+        "en": "The Gulf of Tunis and the harbour of Sidi Bou Said seen from the cliffs",
+        "fr": "Le golfe de Tunis et le port de Sidi Bou Saïd vus depuis la falaise",
+        "ar": "خليج تونس وميناء سيدي بو سعيد من أعلى الجرف"
+      }
+    },
+    "hero-port": {
+      "file": "View of Sidi Bou Said port. Northern Tunisia, Mediterranean Sea, Northern Africa.jpg",
+      "tone": "#3f6f96",
+      "alt": {
+        "en": "Boats in the port of Sidi Bou Said on the Mediterranean",
+        "fr": "Bateaux dans le port de Sidi Bou Saïd, en Méditerranée",
+        "ar": "قوارب في ميناء سيدي بو سعيد على البحر المتوسط"
+      }
+    },
+    "hero-tabarka": {
+      "file": "Le Fort Génois de Tabarka.jpg",
+      "tone": "#4d7a86",
+      "alt": {
+        "en": "The Genoese fort of Tabarka above the sea",
+        "fr": "Le fort génois de Tabarka dominant la mer",
+        "ar": "الحصن الجنوي في طبرقة المطل على البحر"
+      }
+    },
+    "sidibousaid": {
+      "file": "Doors of Sidi Bou Said. Northern Tunisia, Mediterranean Sea, Northern Africa-3.jpg",
+      "tone": "#2c5c99",
+      "alt": {
+        "en": "A studded blue door set in a whitewashed wall in Sidi Bou Said",
+        "fr": "Une porte bleue cloutée dans un mur blanchi à la chaux à Sidi Bou Saïd",
+        "ar": "باب أزرق مرصّع بالمسامير في جدار أبيض بسيدي بو سعيد"
+      }
+    },
+    "medina": {
+      "file": "Souk El Attarine, la médina de Tunis.jpg",
+      "tone": "#8a6a4a",
+      "alt": {
+        "en": "The covered perfume souk, Souk El Attarine, in the medina of Tunis",
+        "fr": "Le souk couvert des parfumeurs, Souk El Attarine, dans la médina de Tunis",
+        "ar": "سوق العطارين المسقوف في مدينة تونس العتيقة"
+      }
+    },
+    "carthage": {
+      "file": "Tunisia-2963 - Antonine Baths (7846402382).jpg",
+      "tone": "#9a8a76",
+      "alt": {
+        "en": "Columns of the Antonine Baths at Carthage facing the sea",
+        "fr": "Colonnes des thermes d'Antonin à Carthage face à la mer",
+        "ar": "أعمدة حمامات أنطونيوس في قرطاج قبالة البحر"
+      }
+    },
+    "eljem": {
+      "file": "Anfiteatro, El Jem, Túnez, 2016-09-04, DD 55-66 HDR PAN.jpg",
+      "tone": "#b08a5c",
+      "alt": {
+        "en": "Panorama inside the Roman amphitheatre of El Jem",
+        "fr": "Panorama à l'intérieur de l'amphithéâtre romain d'El Jem",
+        "ar": "منظر بانورامي داخل المسرح الروماني بالجم"
+      }
+    },
+    "kairouan": {
+      "file": "Courtyard of the Great Mosque Okba of Kairouan.jpg",
+      "tone": "#c2a27a",
+      "alt": {
+        "en": "The marble courtyard and minaret of the Great Mosque of Kairouan",
+        "fr": "La cour de marbre et le minaret de la Grande Mosquée de Kairouan",
+        "ar": "الصحن الرخامي والمئذنة في جامع عقبة بن نافع بالقيروان"
+      }
+    },
+    "djerba": {
+      "file": "Bordj-Kebir-02.jpg",
+      "tone": "#c9a77c",
+      "alt": {
+        "en": "Walls of Borj El Kebir fortress at Houmt Souk, Djerba",
+        "fr": "Les remparts du fort Borj El Kebir à Houmt Souk, Djerba",
+        "ar": "أسوار برج الغازي مصطفى في حومة السوق بجربة"
+      }
+    },
+    "tabarka": {
+      "file": "Tbarka, Jendouba, Tunisia.jpg",
+      "tone": "#4e6f55",
+      "alt": {
+        "en": "Tabarka on the green northern coast of Tunisia",
+        "fr": "Tabarka, sur la côte verte du nord de la Tunisie",
+        "ar": "طبرقة على الساحل الأخضر في شمال تونس"
+      }
+    },
+    "matmata": {
+      "file": "Maison troglodytique, Matmata.jpg",
+      "tone": "#b9895a",
+      "alt": {
+        "en": "A troglodyte pit house dug into the earth at Matmata",
+        "fr": "Une maison troglodytique creusée dans la terre à Matmata",
+        "ar": "مسكن حفري محفور في الأرض بمطماطة"
+      }
+    },
+    "chott": {
+      "file": "Chott-El-Jerid-Sunrise.JPG",
+      "tone": "#d99a6c",
+      "alt": {
+        "en": "Sunrise over the salt flats of Chott el Jerid",
+        "fr": "Lever de soleil sur le lac salé du Chott el-Jérid",
+        "ar": "شروق الشمس فوق سبخة شط الجريد"
+      }
+    },
+    "sahara": {
+      "file": "Tunisia 10-12 - 086 - Douz and the Festival of the Sahara (6609303695).jpg",
+      "tone": "#d4a373",
+      "alt": {
+        "en": "The Sahara near Douz during the International Festival of the Sahara",
+        "fr": "Le Sahara près de Douz pendant le Festival international du Sahara",
+        "ar": "الصحراء قرب دوز خلال المهرجان الدولي للصحراء"
+      }
+    },
+    "ceramics": {
+      "file": "Jarre Nabeul.JPG",
+      "tone": "#b5653f",
+      "alt": {
+        "en": "The monumental ceramic jar in Nabeul, the pottery capital of Tunisia",
+        "fr": "La jarre monumentale de Nabeul, capitale tunisienne de la poterie",
+        "ar": "الجرّة الضخمة في نابل عاصمة الخزف التونسي"
+      }
+    },
+    "chechia": {
+      "file": "La chechia tunisienne.JPG",
+      "tone": "#a3312e",
+      "alt": {
+        "en": "Red chechia caps, the traditional felted wool hat of Tunis",
+        "fr": "Des chéchias rouges, couvre-chef traditionnel en laine feutrée de Tunis",
+        "ar": "شواشي حمراء، غطاء الرأس التقليدي من الصوف الملبّد"
+      }
+    },
+    "carpets": {
+      "file": null,
+      "tone": "#8d4b3a",
+      "alt": {
+        "en": "Hand-knotted carpets in a shop in Kairouan",
+        "fr": "Tapis noués à la main dans une boutique de Kairouan",
+        "ar": "زرابي معقودة يدوياً في متجر بالقيروان"
+      },
+      "category": "Carpet shops in Kairouan"
+    },
+    "couscous": {
+      "file": "Royal Tunisian couscous.JPG",
+      "tone": "#c8913f",
+      "alt": {
+        "en": "A dish of Tunisian couscous",
+        "fr": "Un plat de couscous tunisien",
+        "ar": "طبق كسكسي تونسي"
+      }
+    },
+    "brik": {
+      "file": "Tunisian Brick.JPG",
+      "tone": "#d0a050",
+      "alt": {
+        "en": "Golden Tunisian brik with egg and tuna",
+        "fr": "Brik tunisienne dorée à l'œuf et au thon",
+        "ar": "بريك تونسي ذهبي بالبيض والتن"
+      }
+    },
+    "makroudh": {
+      "file": "Makrouds.JPG",
+      "tone": "#9a6a35",
+      "alt": {
+        "en": "Date-filled makroudh pastries from the medina of Tunis",
+        "fr": "Makroudhs fourrés aux dattes de la médina de Tunis",
+        "ar": "مقروض محشو بالتمر من مدينة تونس العتيقة"
+      }
+    },
+    "malouf": {
+      "file": "Dar Errachida 1.JPG",
+      "tone": "#6b5a48",
+      "alt": {
+        "en": "Dar Rachidia in the medina of Tunis, home of the malouf institute",
+        "fr": "Dar Rachidia, dans la médina de Tunis, foyer du malouf",
+        "ar": "دار الرشيدية في مدينة تونس العتيقة، بيت المالوف"
+      }
+    },
+    "carthage-festival": {
+      "file": "Festival de Carthage au théatre romain.JPG",
+      "tone": "#3a3550",
+      "alt": {
+        "en": "A concert of the International Festival of Carthage in the Roman theatre",
+        "fr": "Un concert du Festival international de Carthage au théâtre romain",
+        "ar": "حفل لمهرجان قرطاج الدولي في المسرح الروماني"
+      }
+    },
+    "douz-festival": {
+      "file": "Tunisia 10-12 - 077 - Douz and the Festival of the Sahara (6609297377).jpg",
+      "tone": "#c99a62",
+      "alt": {
+        "en": "Riders and spectators at the International Festival of the Sahara in Douz",
+        "fr": "Cavaliers et spectateurs au Festival international du Sahara à Douz",
+        "ar": "فرسان ومتفرجون في المهرجان الدولي للصحراء بدوز"
+      }
+    },
+    "avenue": {
+      "file": "Avenue Habib Bourguiba by night.jpg",
+      "tone": "#28324a",
+      "alt": {
+        "en": "Avenue Habib Bourguiba in Tunis at night",
+        "fr": "L'avenue Habib-Bourguiba à Tunis, la nuit",
+        "ar": "شارع الحبيب بورقيبة في تونس ليلاً"
+      }
+    },
+    "cafe": {
+      "file": "CAFE DES DELICES SIDI BOU SAID TUNIS.jpg",
+      "tone": "#5b7fa3",
+      "alt": {
+        "en": "Café des Délices on the terraces of Sidi Bou Said",
+        "fr": "Le Café des Délices sur les terrasses de Sidi Bou Saïd",
+        "ar": "مقهى الدلائس على مدرجات سيدي بو سعيد"
+      }
+    },
+    "skyline": {
+      "file": "Skyline of Tunis.jpg",
+      "tone": "#6c7f93",
+      "alt": {
+        "en": "The skyline of modern Tunis",
+        "fr": "La ligne d'horizon de Tunis moderne",
+        "ar": "أفق مدينة تونس الحديثة"
+      }
+    },
+    "insat": {
+      "file": "Tunis INSAT.JPG",
+      "tone": "#7b8794",
+      "alt": {
+        "en": "INSAT, the National Institute of Applied Sciences and Technology in Tunis",
+        "fr": "L'INSAT, Institut national des sciences appliquées et de technologie, à Tunis",
+        "ar": "المعهد الوطني للعلوم التطبيقية والتكنولوجيا بتونس"
+      }
+    },
+    "artisan": {
+      "file": "A Tunisian craftsman in his beautiful shop in Hergla creating light fixtures,Tunisia.jpg",
+      "tone": "#a07040",
+      "alt": {
+        "en": "A craftsman making light fixtures in his workshop in Hergla",
+        "fr": "Un artisan fabriquant des luminaires dans son atelier à Hergla",
+        "ar": "حرفي يصنع الثريات في ورشته بهرقلة"
+      }
+    },
+    "youth": {
+      "file": null,
+      "tone": "#1b4f9c",
+      "alt": {
+        "en": "Young Tunisians in the city",
+        "fr": "Jeunes Tunisiens en ville",
+        "ar": "شباب تونسيون في المدينة"
+      },
+      "TODO": "TODO: choose a freely licensed photo of young Tunisians (e.g. from Category:People of Tunis or Wiki Loves Africa Tunisia) with consent-appropriate framing, then set 'file'."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+---
+import Picture from './Picture.astro';
+import { type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+---
+<section class="closing" aria-label={t.closing.lineAr} data-closing>
+  <div class="closing__bg" data-closing-bg><Picture slot="sahara" lang={lang} sizes="100vw" /></div>
+  <div class="closing__sun" aria-hidden="true" data-sun></div>
+  <div class="closing__inner">
+    <svg width="72" height="72" viewBox="0 0 120 120" aria-hidden="true" style="color:var(--sand)" data-reveal><use href="#motif-star" /></svg>
+    <p class="closing__line" data-reveal>{t.closing.line}</p>
+    <p class="closing__ar" lang={lang === 'ar' ? 'en' : 'ar'} data-reveal>{t.closing.lineAr}</p>
+    <a class="closing__top" href="#top" data-reveal data-cursor>↑ {t.closing.top}</a>
+  </div>
+</section>

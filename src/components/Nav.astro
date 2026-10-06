@@ -1,0 +1,39 @@
+---
+import { HREF, LANGS, type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const labels: Record<Lang, string> = { en: 'EN', fr: 'FR', ar: 'ع' };
+const names: Record<Lang, string> = { en: 'English', fr: 'Français', ar: 'العربية' };
+---
+<a class="skip" href="#main">{t.nav.skip}</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="nav" data-nav>
+  <a class="nav__brand" href="#top" data-cursor>
+    {lang === 'ar' ? <>تونس <span lang="en">Tunisia</span></> : <>{t.hero.title} <span lang="ar">تونس</span></>}
+  </a>
+  <nav aria-label="Chapters">
+    <ul class="nav__links">
+      <li><a href="#journey" data-spy="journey">{t.nav.journey}</a></li>
+      <li><a href="#map" data-spy="map">{t.nav.map}</a></li>
+      <li><a href="#people" data-spy="people">{t.nav.people}</a></li>
+      <li><a href="#culture" data-spy="culture">{t.nav.culture}</a></li>
+    </ul>
+  </nav>
+  <div class="nav__tools">
+    <nav class="lang" aria-label={t.nav.language}>
+      {LANGS.map((l) => (
+        <a href={HREF[l]} hreflang={l} lang={l} aria-current={l === lang ? 'page' : undefined} title={names[l]}>
+          <span aria-hidden="true">{labels[l]}</span><span class="sr-only">{names[l]}</span>
+        </a>
+      ))}
+    </nav>
+    <button class="sound" type="button" aria-pressed="false" data-sound
+      aria-label={t.nav.sound} data-on={t.nav.soundOn} data-off={t.nav.soundOff} title={t.nav.soundOff}>
+      <svg viewBox="0 0 20 14" aria-hidden="true">
+        <rect x="1" y="0" width="2" height="14" /><rect x="6" y="0" width="2" height="14" />
+        <rect x="11" y="0" width="2" height="14" /><rect x="16" y="0" width="2" height="14" />
+      </svg>
+    </button>
+  </div>
+</header>

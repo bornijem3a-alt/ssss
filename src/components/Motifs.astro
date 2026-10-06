@@ -1,0 +1,58 @@
+---
+// Original SVG motifs inspired by Tunisian studded doors, zellige tilework and
+// Amazigh weaving. Rendered once as <symbol>s and reused with <use>.
+
+// Studs following a horseshoe arch and a central rosette, as on Sidi Bou Said doors.
+const arch: [number, number][] = [];
+for (let i = 0; i <= 22; i++) {
+  const a = Math.PI * (1.12 - (i / 22) * 1.24);
+  arch.push([100 + 70 * Math.cos(a), 112 - 70 * Math.sin(a)]);
+}
+const rosette: [number, number][] = [];
+for (let ring = 1; ring <= 3; ring++) {
+  const n = ring * 8;
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2;
+    rosette.push([100 + ring * 13 * Math.cos(a), 190 + ring * 13 * Math.sin(a)]);
+  }
+}
+const sides: [number, number][] = [];
+for (let y = 128; y <= 282; y += 11) sides.push([44, y], [156, y]);
+const studs = [...arch, ...rosette, ...sides];
+---
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="motif-door" viewBox="0 0 200 300">
+      <path d="M26 300V112a74 74 0 0 1 148 0v188" fill="none" stroke="currentColor" stroke-width="3" />
+      <path d="M36 300V114a64 64 0 0 1 128 0v186" fill="none" stroke="currentColor" stroke-width="1.2" />
+      <line x1="100" y1="50" x2="100" y2="300" stroke="currentColor" stroke-width="1" opacity=".5" />
+      {studs.map(([x, y]) => <circle cx={x.toFixed(1)} cy={y.toFixed(1)} r="2.6" fill="currentColor" />)}
+      <circle cx="100" cy="190" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+    </symbol>
+
+    <symbol id="motif-star" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="25" y="25" width="70" height="70" />
+        <rect x="25" y="25" width="70" height="70" transform="rotate(45 60 60)" />
+        <circle cx="60" cy="60" r="16" />
+        <path d="M60 10v20M60 90v20M10 60h20M90 60h20" />
+      </g>
+    </symbol>
+
+    <pattern id="zellige" width="60" height="60" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <rect x="15" y="15" width="30" height="30" />
+        <rect x="15" y="15" width="30" height="30" transform="rotate(45 30 30)" />
+        <path d="M0 0l9 9M60 0l-9 9M0 60l9-9M60 60l-9-9" />
+        <circle cx="30" cy="30" r="5" />
+      </g>
+    </pattern>
+
+    <pattern id="amazigh" width="48" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 24L12 4l12 20L36 4l12 20" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <path d="M24 9l4 6-4 6-4-6z" fill="currentColor" />
+      <circle cx="0" cy="2" r="1.6" fill="currentColor" />
+      <circle cx="48" cy="2" r="1.6" fill="currentColor" />
+    </pattern>
+  </defs>
+</svg>

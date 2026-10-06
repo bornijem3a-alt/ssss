@@ -1,0 +1,51 @@
+---
+import { credits, population } from '../lib/data';
+import { type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const isTodo = (s: string | null | undefined) => !s || s.startsWith('TODO');
+const images = credits.images.filter((c) => c.file);
+---
+<footer class="footer" id="credits">
+  <div class="wrap">
+    <div class="footer__grid">
+      <section aria-labelledby="f-sources">
+        <h2 id="f-sources">{t.footer.sources}</h2>
+        <ul>
+          {population.sources.map((s) => (
+            <li><a href={s.url} rel="noopener">{s.name}</a>{'license' in s && s.license ? ` (${s.license})` : ''}</li>
+          ))}
+        </ul>
+        <h2 style="margin-top:2.5rem">{t.footer.other}</h2>
+        <ul>
+          {credits.data.map((d) => (
+            <li>{d.what}: {d.url ? <a href={d.url} rel="noopener">{d.source}</a> : d.source} ({d.license})</li>
+          ))}
+        </ul>
+      </section>
+      <section aria-labelledby="f-credits">
+        <h2 id="f-credits">{t.footer.credits}</h2>
+        <ul class="footer__credits" data-credits>
+          {images.map((c) => (
+            <li data-credit-file={c.file} data-pending={isTodo(c.author) ? '' : undefined}>
+              <a href={c.page ?? undefined} rel="noopener" lang="und">{c.file!.replace(/\.(jpe?g|png)$/i, '').replace(/_/g, ' ')}</a>
+              {' '}
+              <span data-credit-text>
+                {isTodo(c.author)
+                  ? <span class="credit-pending">({t.footer.pending})</span>
+                  : <>{t.footer.by} {c.author}, {c.licenseUrl ? <a href={c.licenseUrl} rel="license noopener">{c.license}</a> : c.license}</>}
+              </span>
+              {' · Wikimedia Commons'}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+    <div class="footer__end">
+      <p>{t.footer.madeWith}</p>
+      <p lang="ar">تونس · Tunisia · Tunisie</p>
+    </div>
+  </div>
+</footer>
+<template data-credit-strings data-by={t.footer.by}></template>

@@ -1,0 +1,67 @@
+---
+// Only the Latin and Arabic subsets are needed.
+import '@fontsource/cormorant-garamond/latin-300.css';
+import '@fontsource/cormorant-garamond/latin-400.css';
+import '@fontsource/cormorant-garamond/latin-400-italic.css';
+import '@fontsource/cormorant-garamond/latin-500.css';
+import '@fontsource/cormorant-garamond/latin-ext-400.css';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource/amiri/arabic-400.css';
+import '@fontsource/amiri/arabic-700.css';
+import '@fontsource/amiri/latin-400.css';
+import cormorant300 from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2?url';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import amiriArabic from '@fontsource/amiri/files/amiri-arabic-400-normal.woff2?url';
+import '../styles/global.css';
+import { HREF, LANGS, type Lang, STRINGS } from '../i18n/strings';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const site = Astro.site ?? new URL('https://tunisia-cinematic.example');
+const canonical = new URL(HREF[lang], site);
+const ogLocale = { en: 'en_GB', fr: 'fr_FR', ar: 'ar_TN' }[lang];
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="theme-color" content="#0e141c" />
+    <link rel="canonical" href={canonical} />
+    {LANGS.map((l) => <link rel="alternate" hreflang={l} href={new URL(HREF[l], site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={cormorant300} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={lang === 'ar' ? amiriArabic : interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://commons.wikimedia.org" crossorigin />
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      // Decide on motion before first paint so hidden-until-revealed elements never flash.
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js-motion');
+        // Fade images in once decoded (blur-up).
+        addEventListener('load', function (e) {
+          var el = e.target;
+          if (el && el.tagName === 'IMG' && el.hasAttribute('data-fade')) el.classList.add('is-loaded');
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+    <div class="grain" aria-hidden="true"></div>
+  </body>
+</html>

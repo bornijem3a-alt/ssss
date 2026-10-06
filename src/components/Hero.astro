@@ -1,0 +1,35 @@
+---
+import Picture from './Picture.astro';
+import { type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const latin = lang === 'fr' ? 'Tunisie' : 'Tunisia';
+const slides = ['hero-gulf', 'hero-port', 'hero-tabarka'];
+---
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__slides" aria-hidden="false">
+    {slides.map((s, i) => (
+      <div class="hero__slide">
+        <Picture slot={s} lang={lang} eager={i === 0} sizes="100vw" />
+      </div>
+    ))}
+  </div>
+  <div class="hero__bars" aria-hidden="true"><span></span><span></span></div>
+  <svg class="hero__door" viewBox="0 0 200 300" aria-hidden="true" data-hero-door><use href="#motif-door" /></svg>
+
+  <div class="hero__content">
+    <p class="kicker" data-hero-fade>{t.hero.eyebrow}</p>
+    <h1 class="hero__title display" id="hero-title" aria-label={`${latin} / تونس`}>
+      <span class="word latin" aria-hidden="true" dir="ltr">
+        {[...latin].map((c) => <span class="char">{c}</span>)}
+      </span>
+      <span class="slash" aria-hidden="true">/</span>
+      <span class="word ar" aria-hidden="true" lang="ar" dir="rtl" data-hero-ar>تونس</span>
+    </h1>
+    <p class="hero__sub" data-hero-fade>{t.hero.subtitle}</p>
+  </div>
+  <a class="hero__cue" href="#journey" data-hero-fade data-cursor aria-label={t.hero.cue}>
+    <span aria-hidden="true">{t.hero.cue}</span><i aria-hidden="true"></i>
+  </a>
+</section>

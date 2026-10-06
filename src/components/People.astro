@@ -1,0 +1,124 @@
+---
+import { governorates, population, sourceById } from '../lib/data';
+import { LOCALE, type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const loc = LOCALE[lang];
+const nf = new Intl.NumberFormat(loc);
+const p = population;
+const src = (id: string) => sourceById.get(id);
+
+// Counters: value, decimals, suffix. Values come straight from data/population.json.
+const stats = [
+  { key: 'total', value: p.total.value, decimals: 0, suffix: '', source: p.total.source, hero: true },
+  { key: 'urban', value: p.urbanization.urbanPercent.value, decimals: 0, suffix: '%', source: p.urbanization.urbanPercent.source },
+  { key: 'growth', value: p.growth.annualRatePercent.value, decimals: 2, suffix: '%', source: p.growth.annualRatePercent.source },
+  { key: 'women', value: p.sex.womenPercent.value, decimals: 1, suffix: '%', source: p.sex.womenPercent.source },
+  { key: 'seniors', value: p.ageStructure.broadBands[2].percent, decimals: 1, suffix: '%', source: p.ageStructure.broadBands[2].source },
+] as const;
+const fmt = (v: number, d: number) => new Intl.NumberFormat(loc, { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
+const bandColors = ['#0d5c63', '#1b4f9c', '#a44b30'];
+const sorted = [...governorates].sort((a, b) => b.population - a.population);
+
+const chartData = {
+  locale: loc,
+  labels: {
+    census: t.people.census,
+    estimate: t.people.estimate,
+    urban: t.people.urban,
+    rural: t.people.rural,
+    population: t.map.population,
+  },
+  censuses: p.censuses.filter((c) => c.value !== null).map((c) => ({ x: c.year, y: c.value })),
+  estimates: p.annualEstimates.series.map(([x, y]) => ({ x, y })),
+  urban: [p.urbanization.urbanPercent.value, p.urbanization.ruralPercent.value],
+  govs: sorted.map((g) => ({ name: lang === 'ar' ? g.nameAr : g.name, value: g.population })),
+};
+const todoCensus = p.censuses.filter((c) => c.status === 'todo');
+---
+<section class="people" id="people" aria-labelledby="people-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>{t.people.kicker}</p>
+      <h2 class="display" id="people-title" data-reveal>{t.people.title}</h2>
+      <p class="lead" data-reveal>{t.people.intro}</p>
+    </div>
+
+    <div class="stats">
+      {stats.map((s) => (
+        <div class:list={['stat', { 'stat--hero': 'hero' in s && s.hero }]} data-reveal>
+          <p class="stat__value">
+            <span data-count={s.value} data-decimals={s.decimals} data-locale={loc}>{fmt(s.value, s.decimals)}</span>{s.suffix}
+          </p>
+          <p class="stat__label">
+            {t.people.stats[s.key]}
+            <a class="sr-only" href={src(s.source)?.url}>{t.people.sourceLabel}: {src(s.source)?.name}</a>
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="charts">
+      <figure class="card card--growth" data-reveal>
+        <h3>{t.people.growthTitle}</h3>
+        <p>{t.people.growthDesc}</p>
+        <div class="chart"><canvas data-chart="growth" role="img" aria-label={t.people.growthTitle}></canvas></div>
+        {todoCensus.map((c) => <p class="todo">{t.people.todo}: {c.year}. {c.TODO}</p>)}
+        <details>
+          <summary>{t.people.tableToggle}</summary>
+          <table>
+            <thead><tr><th scope="col">Year</th><th scope="col">{t.people.census}</th></tr></thead>
+            <tbody>
+              {p.censuses.map((c) => (
+                <tr><th scope="row">{c.year}</th><td class="num">{c.value === null ? 'TODO' : nf.format(c.value)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+        <figcaption class="source">{t.people.sourceLabel}: <a href={src('ins-censuses-historic')?.url}>INS</a>, <a href={src('worldbank-sp-pop-totl')?.url}>World Bank SP.POP.TOTL</a></figcaption>
+      </figure>
+
+      <figure class="card card--urban" data-reveal>
+        <h3>{t.people.urbanTitle}</h3>
+        <div class="chart"><canvas data-chart="urban" role="img" aria-label={`${t.people.urban} ${p.urbanization.urbanPercent.value}%, ${t.people.rural} ${p.urbanization.ruralPercent.value}%`}></canvas></div>
+        <figcaption class="source">{t.people.sourceLabel}: <a href={src(p.urbanization.urbanPercent.source)?.url}>{src(p.urbanization.urbanPercent.source)?.name}</a> ({p.urbanization.urbanPercent.year})</figcaption>
+      </figure>
+
+      <figure class="card card--age" data-reveal>
+        <h3>{t.people.ageTitle}</h3>
+        <p>{t.people.ageDesc}</p>
+        <div class="pyramid" role="list">
+          {[...p.ageStructure.broadBands].reverse().map((b, i) => (
+            <div class="pyramid__row" role="listitem">
+              <span>{b.band} <small>{t.people.years}</small></span>
+              <span class="pyramid__bar"><i data-bar style={`--v:${b.percent * 1.5};--c:${bandColors[2 - i]}`}></i></span>
+              <span class="pyramid__val">{fmt(b.percent, 1)}%</span>
+            </div>
+          ))}
+        </div>
+        <p class="todo">{t.people.ageTodo}</p>
+        <figcaption class="source">{t.people.sourceLabel}: <a href={src('ins-rgph-2024')?.url}>INS, RGPH 2024</a></figcaption>
+      </figure>
+
+      <figure class="card card--gov" data-reveal>
+        <h3>{t.people.govTitle}</h3>
+        <p>{t.people.govDesc}</p>
+        <div class="chart chart--tall"><canvas data-chart="gov" role="img" aria-label={t.people.govTitle}></canvas></div>
+        <details>
+          <summary>{t.people.tableToggle}</summary>
+          <table>
+            <thead><tr><th scope="col">{t.map.listLabel}</th><th scope="col">{t.map.population}</th></tr></thead>
+            <tbody>
+              {sorted.map((g) => (
+                <tr><th scope="row">{lang === 'ar' ? g.nameAr : g.name}</th><td class="num">{nf.format(g.population)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+        <figcaption class="source">{t.people.sourceLabel}: <a href={src('ins-rgph-2024')?.url}>{src('ins-rgph-2024')?.name}</a></figcaption>
+      </figure>
+    </div>
+  </div>
+  <script type="application/json" data-chart-data set:html={JSON.stringify(chartData)} />
+</section>

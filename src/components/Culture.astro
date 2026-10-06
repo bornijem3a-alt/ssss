@@ -1,0 +1,39 @@
+---
+import Picture from './Picture.astro';
+import { type Lang, STRINGS } from '../i18n/strings';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = STRINGS[lang];
+const order = ['crafts', 'cuisine', 'music', 'festivals', 'today'] as const;
+// Layout rhythm for the mosaic: a few wide and tall tiles per group.
+const shape: Record<string, string> = {
+  ceramics: 'tile--tall', couscous: 'tile--wide', 'carthage-festival': 'tile--wide',
+  malouf: 'tile--wide', avenue: 'tile--wide', insat: 'tile--tall',
+};
+---
+<section class="culture" id="culture" aria-labelledby="culture-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>{t.culture.kicker}</p>
+      <h2 class="display" id="culture-title" data-reveal>{t.culture.title}</h2>
+      <p class="lead" data-reveal>{t.culture.intro}</p>
+    </div>
+    <div class="mosaic">
+      {order.map((g) => (
+        <>
+          <h3 class="mosaic__group" data-reveal>{t.culture.groups[g]}</h3>
+          {t.culture.items.filter((it) => it.group === g).map((it) => (
+            <figure class:list={['tile', shape[it.image]]} data-reveal="clip" tabindex="0" data-cursor data-cursor-label="+">
+              <Picture slot={it.image} lang={lang} sizes="(min-width: 1100px) 25vw, (min-width: 720px) 33vw, 50vw"
+                imgClass="parallax" pendingLabel={t.footer.photoTodo} />
+              <figcaption>
+                <h4>{it.title}</h4>
+                <p>{it.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </>
+      ))}
+    </div>
+  </div>
+</section>
