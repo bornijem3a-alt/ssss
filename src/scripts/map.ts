@@ -30,7 +30,7 @@ function colour(t: number) {
 
 export async function initMap() {
   const el = document.querySelector<HTMLElement>('[data-map]');
-  const data = readJson<{ locale: string; govs: Gov[] }>('[data-map-data]');
+  const data = readJson<{ locale: string; geo: string; govs: Gov[] }>('[data-map-data]');
   if (!el || !data) return;
 
   const byIso = new Map(data.govs.map((g) => [g.iso, g]));
@@ -47,7 +47,7 @@ export async function initMap() {
     [...document.querySelectorAll<HTMLButtonElement>('[data-govlist] button')].map((b) => [b.dataset.iso!, b])
   );
 
-  const geo = await fetch('/data/governorates.geojson').then((r) => r.json());
+  const geo = await fetch(data.geo).then((r) => r.json());
 
   const map = L.map(el, {
     zoomControl: false,

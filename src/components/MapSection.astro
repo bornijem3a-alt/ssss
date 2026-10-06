@@ -80,5 +80,5 @@ const payload = governorates.map((g) => ({
       ))}
     </ul>
   </div>
-  <script type="application/json" data-map-data set:html={JSON.stringify({ locale: LOCALE[lang], govs: payload })} />
+  <script type="application/json" data-map-data set:html={JSON.stringify({ locale: LOCALE[lang], geo: '/data/governorates.geojson', govs: payload })} />
 </section>
